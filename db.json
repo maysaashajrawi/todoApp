@@ -13,6 +13,17 @@
       "task": "clean house",
       "status": false,
       "id": 4
+    },
+    {
+      "task": "read a book",
+      "status": false,
+      "id": 4
+    },
+    {
+      "task": "watch a movie",
+      "status": false,
+      "id": 4
     }
+
   ]
 }
