@@ -1,4 +1,4 @@
-import {FETCH_TASKS_LOADING,FETCH_TASKS_SUCCESS,FETCH_TASKS_FAIL,ADD_TASK,DELETE_TASK,UPDATE_TASK,FETCH_ONE_TASK} from "../actions/todo";
+import {FETCH_TASKS_LOADING,FETCH_TASKS_SUCCESS,FETCH_TASKS_FAIL} from "../actions/todo";
 import TodoItem from "../components/TodoItem";
 
 const initialState = {
@@ -27,32 +27,6 @@ const tasksReducer=(state = initialState,action)=>{
                 ...state,
                 error:action.error
             }
-        case ADD_TASK:
-            return {
-                ...state,
-                // add task to tasks array
-                tasks:state.tasks.concat(action.payload)
-            }
-
-      case DELETE_TASK:
-          return{
-               ...state,
-
-               tasks:action.payload 
-          }
-        case UPDATE_TASK:
-            return {
-                ...state,
-                tasks:state.tasks.map((item)=>
-                    item.id === action.payload.id ? action.payload : item
-                )
-            }
-        case FETCH_ONE_TASK:
-            return {
-                ...state,
-                tasks:action?.payload
-            }
-
         default:
             return state; 
     }
